@@ -114,6 +114,11 @@ class Meta_Ninja
 		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-meta-ninja-i18n.php';
 
 		/**
+		 * The class responsible for defining all metada operations.
+		 */
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-meta-ninja-operations.php';
+
+		/**
 		 * The class responsible for defining all api endpoints for the react admin panel.
 		 */
 		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-meta-ninja-api.php';
@@ -168,9 +173,12 @@ class Meta_Ninja
 	{
 
 		$plugin_admin = new Meta_Ninja_Admin($this->get_plugin_name(), $this->get_version());
+		$plugin_api = new Meta_Ninja_API();
 
 		$this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_styles');
 		$this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts');
+
+		$this->loader->add_action('rest_api_init', $plugin_api, 'add_api_routes');
 
 		$this->loader->add_action('admin_menu', $plugin_admin, 'add_admin_menu');
 	}
