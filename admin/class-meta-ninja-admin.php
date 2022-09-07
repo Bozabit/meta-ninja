@@ -104,7 +104,7 @@ class Meta_Ninja_Admin
 	public function add_admin_menu()
 	{
 		$capability = 'activate_plugins';
-		add_menu_page("Meta Ninja", "Meta Ninja", $capability, 'meta-ninja-admin-app', array($this, 'insert_react_admin_app'), '', '12');
+		add_menu_page("Meta Ninja", "Meta Ninja", $capability, 'meta-ninja-admin-app', array($this, 'insert_react_admin_app'), '', '999');
 	}
 
 	public function insert_react_admin_app()

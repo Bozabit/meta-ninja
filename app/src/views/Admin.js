@@ -7,7 +7,14 @@ function Admin() {
 		console.log(view);
 	}, []);
 	console.log(view);
-	return <div>Admin</div>;
+	return (
+		<div className='flex w-[100%] h-96'>
+			<div className='w-96 text-center m-auto'>
+				Here will be and awesome admin dashboard. If you wish to contribute go ahead an visit
+				https://github.com/Bozabit/meta-ninja
+			</div>
+		</div>
+	);
 }
 
 export default Admin;
