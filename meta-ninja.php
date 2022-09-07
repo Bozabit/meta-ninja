@@ -60,6 +60,10 @@ function deactivate_meta_ninja()
 register_activation_hook(__FILE__, 'activate_meta_ninja');
 register_deactivation_hook(__FILE__, 'deactivate_meta_ninja');
 
+require plugin_dir_path(__FILE__) . 'includes/class-meta-ninja-updater.php';
+$update_checker = new Meta_Ninja_Updater(__FILE__);
+$update_checker->check_updates();
+
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.

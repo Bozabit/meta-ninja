@@ -10,7 +10,7 @@
  * @subpackage Meta_Ninja/includes
  * @author     Bozabit <bozabit@luckyseed.com>
  */
-class PCH_Mandarin_Updater
+class Meta_Ninja_Updater
 {
     private $_file;
     public function __construct($file)
